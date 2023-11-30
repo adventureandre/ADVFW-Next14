@@ -2,7 +2,9 @@
 
 import React, { useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
-import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+import {ServerStyleSheet, StyleSheetManager, ThemeProvider} from 'styled-components'
+import {defaultTheme} from "@/styles/theme/default";
+import {GlobalStyle} from "@/styles/theme/global";
 
 export default function StyledComponentsRegistry({children,}: { children: React.ReactNode}) {
     const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
@@ -17,7 +19,10 @@ export default function StyledComponentsRegistry({children,}: { children: React.
 
     return (
         <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-            {children}
+            <ThemeProvider theme={defaultTheme}>
+                <GlobalStyle/>
+                {children}
+            </ThemeProvider>
         </StyleSheetManager>
     )
 }

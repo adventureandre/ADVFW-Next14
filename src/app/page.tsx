@@ -9,6 +9,10 @@ const Container = styled.div`
   gap: 1.5rem /* 24px */;
 `;
 
+const Ver =  styled.div`
+background: ${(props) => props.theme['gray-500']};
+`;
+
 
 export default function Page() {
   return (
@@ -21,6 +25,7 @@ export default function Page() {
           <Skeleton />
           <Skeleton />
         </Container>
+          <Ver>VAMOS VER</Ver>
       </div>
   );
 }
