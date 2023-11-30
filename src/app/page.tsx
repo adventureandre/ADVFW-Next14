@@ -6,11 +6,11 @@ import {Skeleton} from "@/components/Skeleton";
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem /* 24px */;
+  gap: 1.5rem ;
 `;
 
 const Ver =  styled.div`
-background: ${(props) => props.theme['gray-500']};
+background: ${(props) => props.theme['gray-100']};
 `;
 
 
@@ -25,7 +25,7 @@ export default function Page() {
           <Skeleton />
           <Skeleton />
         </Container>
-          <Ver>VAMOS VER</Ver>
+          <Ver className="text-center bg-amber-700">VAMOS VER</Ver>
       </div>
   );
 }
